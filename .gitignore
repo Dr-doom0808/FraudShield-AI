@@ -1,0 +1,17 @@
+*.pyc
+__pycache__/
+.env
+.DS_Store
+.vscode/
+.pytest_cache/
+logs/
+*.db
+*.sqlite
+*.sqlite3
+.venv/
+*.log
+.env.local
+.env.production
+node_modules/
+*.tmp
+.cache/

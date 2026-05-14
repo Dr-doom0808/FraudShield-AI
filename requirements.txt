@@ -1,0 +1,23 @@
+fastapi
+uvicorn[standard]
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+sqlalchemy
+psycopg2-binary  # For PostgreSQL
+python-dotenv
+pydantic-settings
+plotly
+shap
+slowapi
+python-json-logger
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+email-validator
+pytest
+httpx
+pytest-cov
