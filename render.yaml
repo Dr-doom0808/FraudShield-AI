@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: fraudshield-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./fraud_detection.db
+      - key: API_V1_STR
+        value: /api/v1
+      - key: API_KEY
+        value: fraud-shield-secret-key
+      - key: MODEL_PATH
+        value: models/fraud_detection_model.pkl
+
+  - type: web
+    name: fraudshield-dashboard
+    env: docker
+    dockerfilePath: ./Dockerfile.streamlit
+    autoDeploy: false
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./fraud_detection.db
+      - key: API_V1_STR
+        value: /api/v1
+      - key: API_URL
+        value: https://fraudshield-api.onrender.com
+      - key: API_KEY
+        value: fraud-shield-secret-key
+      - key: MODEL_PATH
+        value: models/fraud_detection_model.pkl
+    dependsOn:
+      - fraudshield-api
