@@ -30,5 +30,3 @@ services:
         value: fraud-shield-secret-key
       - key: MODEL_PATH
         value: models/fraud_detection_model.pkl
-    dependsOn:
-      - fraudshield-api
