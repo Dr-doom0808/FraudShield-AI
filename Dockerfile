@@ -6,13 +6,14 @@ WORKDIR /app
 # Install system dependencies for XGBoost and other libs
 RUN apt-get update && apt-get install -y \
     build-essential \
+    python3-dev \
     libpq-dev \
     libomp-dev \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
 
 COPY . .
 
