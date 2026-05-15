@@ -5,7 +5,7 @@ from app.core.config import settings
 
 class APIClient:
     def __init__(self):
-        self.base_url = f"http://localhost:8000{settings.API_V1_STR}"
+        self.base_url = f"{settings.API_URL.rstrip('/')}{settings.API_V1_STR}"
         self.token = st.session_state.get('access_token')
         self.headers = {"X-API-KEY": settings.API_KEY}
         if self.token:

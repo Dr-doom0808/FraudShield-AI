@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     DATABASE_URL: str
     API_V1_STR: str = "/api/v1"
+    API_URL: str = "http://localhost:8000"
     MODEL_PATH: str
     API_KEY: str = "fraud-shield-secret-key" 
     
